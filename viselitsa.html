@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let players = Number(prompt("Сколько игроков? 1 или 2?"));
+		if(players==1)
+		{
+		let words = ["яблоко", "апельсин", "земля", "телефон", "книга", "код", "программа", "телевизор", "груша"];
+		let random = words[Math.floor(Math.random() * words.length)]
+		let W = []
+		for(let i = 0; i < random.length; i++)
+		{
+			W.push("-")
+		}
+		let rand = random.length;
+		let attempt = 10
+		let p = 0
+		while((rand > 0) && (attempt > 0))
+		{
+			alert(W);
+			let ans = prompt("Введите букву. Попыток - "+ attempt)
+			if(ans == null)
+				{
+					break;
+				}
+			else if(ans.length != 1)
+				{
+					alert("Введите только 1 букву")
+				}
+				else
+				{
+					for(i = 0; i < random.length; i++)
+						{
+							if(ans==random[i])
+							
+	{							W[i] = ans;
+								rand--;
+								p++;
+								console.log(p);
+							}
+
+						}
+				}
+				if(p==0){
+					attempt--;
+				}
+				else{
+					p=0
+				}
+		if(attempt==0){
+			alert("Попытки закончились")
+			break;
+		}
+					}
+					if(rand==0){
+			alert("Вы отгадали слово - "+W)
+		}
+			}
+		let next = confirm("")
+
+
+
+		if(players==2)
+		{
+		let random = prompt("Введите слово")
+		let W = []
+		for(let i = 0; i < random.length; i++)
+		{
+			W.push("-")
+		}
+		let rand = random.length;
+		let attempt = 10
+		let p = 0
+		while((rand > 0) && (attempt > 0))
+		{
+			alert(W);
+			let ans = prompt("Введите букву. Попыток"+ attempt)
+			if(ans==null)
+				{
+					break;
+				}
+			else if(ans.length != 1)
+				{
+					alert("Введите только 1 букву")
+				}
+				else
+				{
+					for(i = 0; i < random.length; i++)
+						{
+							if(ans==random[i])
+							
+	{							W[i] = ans;
+								rand--;
+								p++;
+								console.log(p);
+
+							}
+
+						}
+				}
+				if(p==0){
+					attempt--;
+				}
+				else{
+					p=0
+				}
+		if(attempt==0){
+			alert("Попытки закончились")
+			break;
+		}
+					}
+					if(rand==0){
+			alert("Вы отгадали слово - "+W)
+		}
+			}
+		else{
+			alert("Не в этот раз.")
+		}
+
+		
+	</script>
